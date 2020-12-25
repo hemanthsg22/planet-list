@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row mt7">
+        <div class="col-md-6">
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Planet Name</th>
+                    <th>Favourate</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor ="let data of planetList">
+                    <td>{{data.name}}</td>
+                    <td><input type="checkbox" (click)="isChecked($event,data)"></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+        <div *ngIf="showFavor" class="col-md-6">
+          <h4>List of Favourite Planets</h4>
+            <ul *ngFor="let item of favourateList">
+              <li>{{item.name}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
